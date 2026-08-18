@@ -359,6 +359,8 @@
       content:"";position:absolute;left:14px;right:14px;bottom:16px;height:55%;border-radius:8px;
       background:linear-gradient(135deg,rgba(54,92,245,.08),rgba(54,92,245,.22))
     }
+    .screen-shot{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;border:1px solid var(--line);display:block;background:#F3F5F7;transition:transform .25s ease}
+    .screen:hover .screen-shot{transform:scale(1.015)}
     .modal-foot{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}
     .modal-foot p{color:var(--muted);max-width:620px;font-size:.88rem}
 
@@ -673,7 +675,7 @@
         solution:"MENTA organiza el proceso alrededor de cada paciente y permite al profesional visualizar evolución, compartir recursos, proponer tareas y leer registros sin convertir la terapia en una experiencia fría.",
         features:["Dashboard profesional","Ficha longitudinal del paciente","Registro emocional","Objetivos y tareas","Biblioteca de psicoeducación","Evolución y tendencias"],
         design:"Interfaz cálida, neutral y de baja fricción. Jerarquía clara, lenguaje no invasivo, panel profesional denso pero legible y experiencia móvil simplificada para el paciente.",
-        screens:["Dashboard profesional","Ficha del paciente","Registro emocional","Psicoeducación","Evolución"]
+        screens:[{name:"Dashboard profesional",image:"assets/screens/menta-dashboard.png"},{name:"Ficha del paciente",image:"assets/screens/menta-paciente.png"},{name:"Registro emocional",image:"assets/screens/menta-registro.png"},{name:"Psicoeducación",image:"assets/screens/menta-biblioteca.png"}]
       },
       nexa:{
         image:"assets/nexa.png",
@@ -684,7 +686,7 @@
         solution:"NEXA EDU centraliza los datos esenciales y prioriza alertas accionables. Cada perfil ve lo que necesita: equipos directivos, docentes, preceptores y familias.",
         features:["Dashboard institucional","Gestión de estudiantes","Asistencia y novedades","Comunicación con familias","Alertas de trayectoria","Perfiles y permisos"],
         design:"Sistema de alta densidad informativa con navegación clara, estados consistentes, filtros rápidos y foco en situaciones que requieren intervención.",
-        screens:["Dashboard institucional","Estudiantes","Asistencia","Comunicaciones","Alertas"]
+        screens:[{name:"Dashboard institucional",image:"assets/screens/nexa-dashboard.png"},{name:"Estudiantes",image:"assets/screens/nexa-estudiantes.png"},{name:"Asistencia",image:"assets/screens/nexa-asistencia.png"},{name:"Alertas",image:"assets/screens/nexa-alertas.png"}]
       },
       mesa:{
         image:"assets/mesa.png",
@@ -695,7 +697,7 @@
         solution:"MESA crea un flujo único: la reserva ocupa una mesa, la comanda llega a cocina, el pedido cambia de estado y la caja consolida todo para la gestión.",
         features:["Mapa de mesas","Reservas","Comandas","Kitchen Display","Caja","Métricas operativas"],
         design:"Interfaz de alto contraste para operación rápida, botones grandes, estados muy visibles y panel de gestión diferenciado del uso cotidiano en salón y cocina.",
-        screens:["Mapa de mesas","Reservas","Comandas","Cocina","Métricas"]
+        screens:[{name:"Mapa de mesas",image:"assets/screens/mesa-mesas.png"},{name:"Reservas",image:"assets/screens/mesa-reservas.png"},{name:"Comandas",image:"assets/screens/mesa-comandas.png"},{name:"Cocina",image:"assets/screens/mesa-cocina.png"}]
       },
       vesta:{
         image:"assets/vesta.png",
@@ -706,7 +708,7 @@
         solution:"VESTA vincula cada venta con el stock real, publica un catálogo actualizado y transforma consultas por WhatsApp en pedidos trazables.",
         features:["Stock por talle y color","Ventas","Catálogo público","Pedidos por WhatsApp","Clientes","Alertas de reposición"],
         design:"Dirección editorial, minimalista y orientada a producto. El panel prioriza variantes y disponibilidad sin sentirse como un ERP pesado.",
-        screens:["Stock y variantes","Ventas","Catálogo","Pedidos"]
+        screens:[{name:"Stock y variantes",image:"assets/screens/vesta-stock.png"},{name:"Ventas",image:"assets/screens/vesta-ventas.png"},{name:"Catálogo",image:"assets/screens/vesta-catalogo.png"},{name:"Pedidos",image:"assets/screens/vesta-pedidos.png"}]
       },
       aula:{
         image:"assets/aula.png",
@@ -717,7 +719,7 @@
         solution:"AULA concentra el trabajo operativo del docente en un espacio propio, rápido y adaptable a distintos cursos y materias.",
         features:["Cursos","Asistencia","Calificaciones","Planificación","Seguimiento de estudiantes","Recursos"],
         design:"Interfaz clara y funcional, con acciones frecuentes a un toque y vistas por curso que reducen navegación innecesaria.",
-        screens:["Cursos","Asistencia","Calificaciones","Planificación"]
+        screens:[{name:"Cursos",image:"assets/screens/aula-cursos.png"},{name:"Asistencia",image:"assets/screens/aula-asistencia.png"},{name:"Calificaciones",image:"assets/screens/aula-calificaciones.png"},{name:"Planificación",image:"assets/screens/aula-planificacion.png"}]
       },
       stayra:{
         image:"assets/stayra.png",
@@ -728,7 +730,7 @@
         solution:"STAYRA funciona como centro operativo: disponibilidad, reservas, huéspedes, cobros y housekeeping se actualizan sobre la misma información.",
         features:["Calendario de reservas","Habitaciones/unidades","Huéspedes","Pagos","Housekeeping","Indicadores de ocupación"],
         design:"Estética boutique y serena, combinada con un calendario operativo claro y suficiente densidad para administración diaria.",
-        screens:["Reservas","Disponibilidad","Huéspedes","Housekeeping"]
+        screens:[{name:"Reservas",image:"assets/screens/stayra-reservas.png"},{name:"Disponibilidad",image:"assets/screens/stayra-disponibilidad.png"},{name:"Huéspedes",image:"assets/screens/stayra-huespedes.png"},{name:"Limpieza",image:"assets/screens/stayra-limpieza.png"}]
       },
       habita:{
         image:"assets/habita.png",
@@ -739,7 +741,7 @@
         solution:"HABITA conecta inventario y CRM: cada consulta entra vinculada a una propiedad, se agenda la visita y queda visible el estado de la oportunidad.",
         features:["CRM de leads","Propiedades","Catálogo público","Agenda de visitas","Propietarios","WhatsApp"],
         design:"Visual premium y espacioso en el catálogo; panel interno más denso, orientado a pipeline, tareas y seguimiento comercial.",
-        screens:["Pipeline","Propiedades","Ficha de lead","Catálogo"]
+        screens:[{name:"Pipeline",image:"assets/screens/habita-pipeline.png"},{name:"Propiedades",image:"assets/screens/habita-propiedades.png"},{name:"Ficha de lead",image:"assets/screens/habita-lead.png"},{name:"Catálogo",image:"assets/screens/habita-catalogo.png"}]
       },
       turno:{
         image:"assets/turno.png",
@@ -750,7 +752,7 @@
         solution:"TURNO permite reservar online y ofrece al negocio una agenda operativa con clientes, servicios, profesionales, recordatorios e historial.",
         features:["Agenda","Reserva online","Servicios","Profesionales","Clientes","Recordatorios"],
         design:"Experiencia mobile-first para quien reserva y vista calendario de alta legibilidad para quien administra. El caso visual se presenta sobre una peluquería.",
-        screens:["Agenda","Reserva online","Clientes","Servicios"]
+        screens:[{name:"Agenda",image:"assets/screens/turno-agenda.png"},{name:"Reserva online",image:"assets/screens/turno-reserva.png"},{name:"Clientes",image:"assets/screens/turno-clientes.png"},{name:"Servicios",image:"assets/screens/turno-servicios.png"}]
       }
     };
 
@@ -765,10 +767,10 @@
     const modalScreens = document.getElementById("modalScreens");
     const modalImage = document.getElementById("modalImage");
 
-    function screenCard(name){
+    function screenCard(screen){
       return `<div class="screen">
-        <div class="screen-top"><h4>${name}</h4><span class="mini-dots"><i></i><i></i><i></i></span></div>
-        <div class="fake short"></div><div class="fake blue"></div><div class="fake-block"></div>
+        <div class="screen-top"><h4>${screen.name}</h4><span class="mini-dots"><i></i><i></i><i></i></span></div>
+        <img class="screen-shot" src="${screen.image}" alt="${screen.name}" loading="lazy" />
       </div>`;
     }
 
