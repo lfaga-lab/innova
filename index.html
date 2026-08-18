@@ -321,6 +321,22 @@
     .modal-hero h2{font-size:clamp(4rem,10vw,8rem);line-height:.84;margin:65px 0 20px}
     .modal-hero p{max-width:620px;color:#B5BBC4;font-size:1.08rem}
     .modal-body{padding:38px}
+    .case-media{
+      margin:-18px 38px 30px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 24px 70px rgba(23,25,28,.08);
+    }
+    .case-media img{
+      width:100%;
+      display:block;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      background:#EEF1F5;
+    }
+
     .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
     .case-block{padding:24px;border-top:1px solid var(--line)}
     .case-block h3{font-size:1.35rem;margin-bottom:12px}
@@ -388,6 +404,7 @@
       .modal{padding:8px}
       .modal-panel{margin:4px auto;border-radius:22px}
       .modal-hero,.modal-body{padding:24px}
+      .case-media{margin:-8px 24px 24px;border-radius:18px}
       .modal-hero h2{margin-top:82px}
       .modal-foot{display:block}.modal-foot .btn{margin-top:14px}
       footer{display:block}footer span{display:block;margin-top:8px}
@@ -624,6 +641,9 @@
         <p id="modalSubtitle"></p>
       </div>
       <div class="modal-body">
+        <div class="case-media">
+          <img id="modalImage" src="" alt="Vista de la aplicación" loading="lazy" />
+        </div>
         <div class="case-grid">
           <div class="case-block"><h3>El problema</h3><p id="modalProblem"></p></div>
           <div class="case-block"><h3>La solución</h3><p id="modalSolution"></p></div>
@@ -645,6 +665,7 @@
   <script>
     const projects = {
       menta:{
+        image:"assets/menta.png",
         tag:"NUVORA LAB · PSICOLOGÍA",
         title:"MENTA",
         subtitle:"Una plataforma de seguimiento terapéutico para conectar sesiones, objetivos, registros y psicoeducación en un mismo entorno.",
@@ -655,6 +676,7 @@
         screens:["Dashboard profesional","Ficha del paciente","Registro emocional","Psicoeducación","Evolución"]
       },
       nexa:{
+        image:"assets/nexa.png",
         tag:"NUVORA LAB · EDUCACIÓN",
         title:"NEXA EDU",
         subtitle:"Gestión escolar integral diseñada para que la institución detecte, comunique y actúe antes de que la información se pierda.",
@@ -665,6 +687,7 @@
         screens:["Dashboard institucional","Estudiantes","Asistencia","Comunicaciones","Alertas"]
       },
       mesa:{
+        image:"assets/mesa.png",
         tag:"NUVORA LAB · GASTRONOMÍA",
         title:"MESA",
         subtitle:"Una operación gastronómica conectada desde la reserva hasta la cocina, la caja y las métricas.",
@@ -675,6 +698,7 @@
         screens:["Mapa de mesas","Reservas","Comandas","Cocina","Métricas"]
       },
       vesta:{
+        image:"assets/vesta.png",
         tag:"NUVORA LAB · RETAIL",
         title:"VESTA",
         subtitle:"Stock, ventas, catálogo y pedidos conectados para comercios de indumentaria.",
@@ -685,6 +709,7 @@
         screens:["Stock y variantes","Ventas","Catálogo","Pedidos"]
       },
       aula:{
+        image:"assets/aula.png",
         tag:"NUVORA LAB · DOCENTES",
         title:"AULA",
         subtitle:"Una herramienta personal para ordenar la vida académica del docente sin multiplicar planillas.",
@@ -695,6 +720,7 @@
         screens:["Cursos","Asistencia","Calificaciones","Planificación"]
       },
       stayra:{
+        image:"assets/stayra.png",
         tag:"NUVORA LAB · HOSPITALITY",
         title:"STAYRA",
         subtitle:"Gestión adaptable para hoteles boutique, alojamientos y alquiler temporario.",
@@ -705,6 +731,7 @@
         screens:["Reservas","Disponibilidad","Huéspedes","Housekeeping"]
       },
       habita:{
+        image:"assets/habita.png",
         tag:"NUVORA LAB · REAL ESTATE",
         title:"HABITA",
         subtitle:"CRM inmobiliario con catálogo público y seguimiento de oportunidades.",
@@ -715,6 +742,7 @@
         screens:["Pipeline","Propiedades","Ficha de lead","Catálogo"]
       },
       turno:{
+        image:"assets/turno.png",
         tag:"NUVORA LAB · SERVICIOS",
         title:"TURNO",
         subtitle:"Agenda digital configurable para cualquier negocio que venda tiempo.",
@@ -735,6 +763,7 @@
     const modalFeatures = document.getElementById("modalFeatures");
     const modalDesign = document.getElementById("modalDesign");
     const modalScreens = document.getElementById("modalScreens");
+    const modalImage = document.getElementById("modalImage");
 
     function screenCard(name){
       return `<div class="screen">
@@ -749,6 +778,8 @@
         modalTag.textContent = p.tag;
         modalTitle.textContent = p.title;
         modalSubtitle.textContent = p.subtitle;
+        modalImage.src = p.image;
+        modalImage.alt = `Vista de producto de ${p.title}`;
         modalProblem.textContent = p.problem;
         modalSolution.textContent = p.solution;
         modalDesign.textContent = p.design;
